@@ -1,9 +1,8 @@
-# groq.py  (pip install openai)
 import config
 from openai import OpenAI
 
 GROQ_URL = "https://api.groq.com/openai/v1"
-MODELS = getattr(config, "GROQ_MODELS", ["opeanai/gpt-oss-20b","opeanai/gpt-oss-7b","opeanai/gpt-oss-3b","opeanai/gpt-oss-1b","openai/gpt-oss-120b","qwen/qwen-7b","qwen/qwen-14b","qwen/qwen-14b-chat","qwen/qwen-7b-chat","qwen/qwen-7b-v1.0","qwen/qwen-14b-v1.0","qwen/qwen-7b-v1.1","qwen/qwen-14b-v1.1","qwen/qwen-7b-v1.2","qwen/qwen-14b-v1.2","qwen/qwen-7b-v1.3","qwen/qwen-14b-v1.3","qwen/qwen-7b-v1.4","qwen/qwen3.8-27b","allam-2-7b"])
+MODELS = getattr(config, "GROQ_MODELS", ["openai/gpt-oss-20b","openai/gpt-oss-120b","qwen/qwen3.8-27b"])
 
 def generate_response(prompt: str, temperature: float = 0.3, max_tokens: int = 512) -> str:
     key = getattr(config, "GROQ_API_KEY", None)
